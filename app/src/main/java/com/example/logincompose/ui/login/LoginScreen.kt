@@ -49,7 +49,9 @@ fun LoginScreen(navController: NavController) {
 
         Button(
             onClick = {
-                navController.navigate(Screen.Home.route)
+                navController.navigate(Screen.TodoList.route) {
+                    popUpTo(Screen.Login.route) { inclusive = true }
+                }
             },
             modifier = Modifier.fillMaxWidth()
         ) {
